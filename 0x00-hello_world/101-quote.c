@@ -9,6 +9,6 @@
 int main(void)
 {
 	write(STDOUT_FILENO, "and that piece of art is useful\" - "
-                               "Dora Korpar, 2015-10-19\n", 42 + 28 + 1 + 8);
+                               "Dora Korpar, 2015-10-19\n", 55);
 	return (1);
 }
