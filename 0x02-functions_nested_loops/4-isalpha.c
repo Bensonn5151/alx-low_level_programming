@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- * main - Entry Point
- *
+ * _isalpha - check main
+ *@c: an input character
+ *Description: function returns 1 if the character is a lower case
+ * or uppercase
  * Return: 1 or 0
  */
 int _isalpha(int c)
