@@ -1,19 +1,24 @@
-#include <stdio.h>
+#include <unistd.h>
 #include "main.h"
+#include <stdio.h>
 /**
- * main - Entry point
- *
- * Return: Always 0(success)
+ * main - Check description
+ * Description: It prints the word Holberton, followed by a new line.
+ * Return: 0
  */
-int main()
+
+int main(void)
+
 {
-	int i, j;
-	for (i =1; i<=1; i++)
-	{
-		for (j =1;j <=i; j++)
-		{
-			printf("_putchar\n");
-		}
-	}
-	return 0;
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+	return (0);
 }
+
