@@ -7,7 +7,6 @@
  * @needle: string substring
  * Return: pointer to beginning of substring
  */
-
 char *_strstr(char *haystack, char *needle)
 {
 	char *beginn = needle, *beginh = haystack;
