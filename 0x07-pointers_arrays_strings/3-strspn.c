@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strspn: search string for set of bytes
+ * _strspn- search a string for set of bytes
  * @s: string char array
  * @accept: char array to check bytes
  * Return: number of bytes in initial segment s
@@ -9,27 +9,22 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int a;
-	int b;
-	int c;
+	unsigned int i, j, count = 0;
 
-	a = 0;
-	b = 0;
-	while (s[a] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		b = 0;
-		while (accept[b] != '\0')
+		for (j = 0; accept[j] != '\0'; j++)
 		{
-			if (s[a] == accept[b])
+			if (s[i] == accept[j])
 			{
-				c++;
+				count++;
 				break;
 			}
-			b++;
 		}
-		if (accept[b] == '\0')
+		if (accept[j] == '\0')
+		{
 			break;
-				a++;
+		}
 	}
-	return (c);
+	return (count);
 }
