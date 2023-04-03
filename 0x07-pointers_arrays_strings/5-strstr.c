@@ -9,20 +9,18 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	char *beginn = needle, *beginh = haystack;
-
-	while (*haystack)
+	for (; *haystack != '\0'; haystack++)
 	{
-		beginh = haystack;
-		needle = beginn;
-		while (*haystack == *needle)
-		{
-			haystack++;
-			needle++;
-		}
-		if (*needle == '\0')
-			return (haystack);
-		haystack = beginh + 1;
+	char *beginn = needle;
+	char *beginh = haystack;
+
+	while (*beginn == *beginh && *beginh != '\0')
+	{
+		beginn++;
+		beginh++;
+	}
+	if (*beginh == '\0')
+		return(haystack);
 	}
 	return (NULL);
 }
