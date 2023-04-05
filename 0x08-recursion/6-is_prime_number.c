@@ -1,36 +1,35 @@
 #include "main.h"
+
 /**
- * is_prime_number - Afunction that checks if a number is prime.
- * @n: an input integer
- * Return: 1 if n is prime or  0 in otherwise
+ * pFinder - searches for if a number is prime
+ *
+ * @a: the number to check
+ * @b: the numbers we'll go through
+ *
+ * Return: Whether or not the number is a prime number
  */
-int dividable(int num, int div);
-int is_prime_number(int n)
+
+int pFinder(int a, int b)
 {
-	int div = 2;
-
-	if (n <= 1)
+	if (a <= 1 || a % b == 0)
 		return (0);
-
-	if (n <= 3)
+	else if (a == b)
 		return (1);
+	else if (a > b)
+		pFinder(a, b + 1);
 
-	return (dividable(n, div));
+	return (1);
 }
 
 /**
- * dividable - check if num is divisible
- * @num: the number to be checked
- * @div: the result of division
- * Return: 1 if num is divisible or 0 if numis not divisible
+ * is_prime_number - tells us if an integer is a prime number or not
+ *
+ * @n: the number to check
+ *
+ * Return: 0 if the number is not prime, and 1 if it is
  */
-int dividable(int num, int div)
+
+int is_prime_number(int n)
 {
-	if (num % div == 0)
-		return (0);
-
-	if (div == num / 2)
-		return (1);
-
-	return (dividable(num, div + 1));
+	return (pFinder(n, 2));
 }
