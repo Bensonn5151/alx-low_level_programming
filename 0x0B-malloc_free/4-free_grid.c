@@ -5,7 +5,7 @@
  * free_grid - frees a 2D array of ints
  *
  * @grid: input 2D array of int to free
- * @height number of rows in grid
+ * @height: number of rows in grid
  *
  * Return: Nothing
  */
