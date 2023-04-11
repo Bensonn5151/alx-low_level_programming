@@ -3,8 +3,8 @@
 
 /**
  * str_concat - function that concatenates two strings
- * s1: input pointer of the first string
- * s2: input pointer of the second string
+ * @s1: input pointer of the first string
+ * @s2: input pointer of the second string
  * Return: Apointer to concatened strings or NULL
  */
 char *str_concat(char *s1, char *s2)
