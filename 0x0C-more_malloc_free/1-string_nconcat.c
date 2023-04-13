@@ -4,19 +4,18 @@
 #include <string.h>
 
 /**
- * string_nconcat - Concatenates two strings with a limit on the number of bytes from s2
+ * string_nconcat - Concatenates two strings
  * @s1: Pointer to the first string
  * @s2: Pointer to the second string
  * @n: Number of bytes from s2 to concatenate
  *
- * Return: Pointer to a newly allocated memory containing the concatenated string,
- *         or NULL on failure
+ * Return: Pointer to a newly allocated memory or NULL on failure
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *concat;
 	unsigned int len1, len2, i, j;
-	
+
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
@@ -27,7 +26,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n = len2;
 	concat = (char *)malloc(sizeof(char) * (len1 + n + 1));
 	if (concat == NULL)
-		return NULL;
+		return (NULL);
 	for (i = 0; s1[i] != '\0'; i++)
 		concat[i] = s1[i];
 	for (j = 0; j < n; j++, i++)
