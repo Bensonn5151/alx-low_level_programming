@@ -1,20 +1,51 @@
+#include "main.h"
+
 /**
- * flip_bits - A function that gets number of bits needed to flip
- * @n: bit flips needed to equal m for n
- * @m: The number to set other equal
- * Return: The number of fliped bits
+ * flip_bits - number of bits needed to flip to change one number to anothe
+ * @n: First number to check bits
+ * @m: Second number to check bits
+ * Return: Number of bits needed
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int flips = 0;
-	unsigned long int xor = (n ^ m);
-	unsigned long int max = 0x01;
+	unsigned long int nlen, mlen, flip, storen, storem;
 
-	while (max <= xor)
+	nlen = mlen = flip = 0;
+	storen = n;
+	storem = m;
+	while (n > 0)
 	{
-		if (max & xor)
-			flips++;
-		max <<= 1;
+		n = n >> 1;
+		nlen++;
 	}
-	return (flips);
+	while (m > 0)
+	{
+		m = m >> 1;
+		mlen++;
+	}
+	m = storem;
+	n = storen;
+	if (mlen > nlen)
+	{
+		while (mlen > 0)
+		{
+			if ((m & 1) != (n & 1))
+				flip += 1;
+			m = m >> 1;
+			n = n >> 1;
+			mlen--;
+		}
+	}
+	else
+	{
+		while (nlen > 0)
+		{
+			if ((m & 1) != (n & 1))
+				flip += 1;
+			m = m >> 1;
+			n = n >> 1;
+			nlen--;
+		}
+	}
+	return (flip);
 }
